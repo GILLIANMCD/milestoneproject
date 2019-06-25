@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+body{
+    color: #fff;
+    text-align: center;
+   }
+   /*Responsive Grid Mobile*/
+@media screen and (max-width: 767px) {
+ #content{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: minmax(100px, auto);
+   grid-gap: 0;
+   margin: 0 auto; 
+   grid-template-areas: 
+     "logo logo logo"
+     "header header header"
+     "banner banner banner"
+     "section1 section1 section1"
+     "section2 section2 section2"
+     "section3 section3 section3"
+     "footer1 footer1 footer1"
+     "footer2 footer2 footer2"
+     "footer3 footer3 footer3";
+     }}
+ /*Responsive Grid Tablet*/    
+@media (min-width: 768px) and (max-width: 991px){
+   #content
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 0;
+  margin: 0 auto; 
+  grid-template-areas: 
+     "logo header header"
+     "banner banner banner"
+     "section1 section1 section1"
+     "section2 section2 section3"
+     "footer1 footer2 footer3";
+}
+}
+/*Responsive Grid Destop*/
+@media (min-width: 992px) {
+ #content{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-auto-rows: minmax(100px, auto);
+   grid-gap: 0;
+   margin: 0 auto; 
+   grid-template-areas: 
+      "logo header header"
+      "banner banner banner"
+      "section1 section2 section3"
+      "footer1 footer2 footer3";
+     }
+    
+}
+ #content>*{
+  background: #000 url("https://d2ydxeblbafldb.cloudfront.net/img/global/texture.png");
+  padding: 10px;
+}
+.header {
+  grid-area: header;
+  }
+.logo {
+    grid-area: logo;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    min-height: 100px;
+    }
+
+/*Strip the ul of padding and list styling*/
+ul {
+    list-style-type:none;
+    margin:0;
+    padding: 50px;
+    position: relative;
+}
+/*Create a horizontal list with spacing*/
+.nav {
+    display: inline-block;
+    margin-right: 1px;
+  
+}
+/*Style for menu links*/
+li a {
+    display:block;
+    min-width:140px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    background: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;   
+}
+/*Hover state for top level links*/
+li:hover a {
+    background: transparent;
+    color: #fbc318;
+    text-decoration: underline;
+}
+/*Style for dropdown links*/
+li:hover ul a {
+    background: transparent;
+    color: #2f3036;
+    height: 40px;
+    line-height: 40px;
+}
+/*Hover state for dropdown links*/
+li:hover ul a:hover {
+    color: #fbc318; 
+}
+/*Hide dropdown links until they are needed*/
+li ul {
+    display: none;
+}
+/*Make dropdown links vertical*/
+li ul li {
+    display: block;
+    float: none;
+}
+/*Prevent text wrapping*/
+li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+/*Display the dropdown on hover*/
+ul li a:hover + .hidden, .hidden:hover {
+    display: block;
+}
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+/*Hide checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+/*Responsive Style Menu*/
+@media screen and (max-width : 992px){
+    /*Make dropdown links appear inline*/
+    ul {
+        position: static;
+        display: none;
+    }
+    /*Create vertical spacing*/
+    li {
+        margin-bottom: 1px;
+    }
+    /*Make all menu links full width*/
+    ul li, li a {
+        width: 100%;
+    }
+    /*Display 'show menu' link*/
+    .show-menu {
+        display:block;
+    }
+}
+
+.banner {
+  grid-area: banner;
+  
+  }
+  
+.section1 {
+  grid-area: section1;
+  }
+  .section2 {
+  grid-area: section2;
+  }
+  .section3 {
+  grid-area: section3;
+  }
+ 
+.footer1 {
+  grid-area: footer1;
+ 
+}
+.footer2 {
+    grid-area: footer2;
+}
+
+.footer3 {
+    grid-area: footer3;
+    }
+
+ul.quicklinks {
+    list-style-type: disc;
+}
+
+ul.quicklinks li a {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0px;
+
+}
+/*Social Links*/
+ul.social-links {
+    margin:0;
+    padding: 50px;
+    position: relative;
+}
+
+ul.social-links li {
+    list-style: none;
+}
+
+ul.social-links li a i {
+  padding: 15px;
+  font-size: 15px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  background: #4b01ca;  
+  }
+
+
+  li.social {
+    padding: 0;
+    display: inline-block;
+
+} 
+  /*Newsletter SignUp*/
+ .form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 10px;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: #4b01ca;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: #fbc318;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
