@@ -1,16 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
-
 body{
     color: #fff;
-    text-align: center;
+    }
+
+    
+ .logo {
+    grid-area: logo;
    }
-   /*Responsive Grid Mobile*/
+.logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Responsive Grid Mobile*/
 @media screen and (max-width: 767px) {
  #content{
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    grid-auto-rows: minmax(100px, auto);
-   grid-gap: 0;
+   grid-gap: 10px;
    margin: 0 auto; 
    grid-template-areas: 
      "logo logo logo"
@@ -25,12 +34,12 @@ body{
      }}
  /*Responsive Grid Tablet*/    
 @media (min-width: 768px) and (max-width: 991px){
-   #content
+#content
 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  grid-gap: 0;
+  grid-gap: 10px;
   margin: 0 auto; 
   grid-template-areas: 
      "logo header header"
@@ -40,13 +49,13 @@ body{
      "footer1 footer2 footer3";
 }
 }
-/*Responsive Grid Destop*/
+/*Responsive Grid Desktop*/
 @media (min-width: 992px) {
  #content{
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    grid-auto-rows: minmax(100px, auto);
-   grid-gap: 0;
+   grid-gap: 10px;
    margin: 0 auto; 
    grid-template-areas: 
       "logo header header"
@@ -56,26 +65,22 @@ body{
      }
     
 }
+
  #content>*{
   background: #000 url("https://d2ydxeblbafldb.cloudfront.net/img/global/texture.png");
   padding: 10px;
 }
+/*-----*/
 .header {
   grid-area: header;
   }
-.logo {
-    grid-area: logo;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
-    min-height: 100px;
-    }
 
 /*Strip the ul of padding and list styling*/
 ul {
+    text-align: center;
     list-style-type:none;
     margin:0;
-    padding: 50px;
+    padding:0;
     position: relative;
 }
 /*Create a horizontal list with spacing*/
@@ -87,33 +92,26 @@ ul {
 /*Style for menu links*/
 li a {
     display:block;
-    min-width:140px;
+    font-size: 1.5rem;
     height: 50px;
     text-align: center;
     line-height: 50px;
     color: #fff;
-    background: transparent;
+    background: rgba(67, 1, 189, 0.35);
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 3px;   
 }
 /*Hover state for top level links*/
 li:hover a {
-    background: transparent;
+    box-shadow: 0 12px 16px 0 rgba(251,195,24,0.35),0 17px 50px 0 rgba(251,195,24,0.35);
     color: #fbc318;
-    text-decoration: underline;
-}
-/*Style for dropdown links*/
-li:hover ul a {
-    background: transparent;
-    color: #2f3036;
-    height: 40px;
-    line-height: 40px;
-}
+
+    }
+
 /*Hover state for dropdown links*/
 li:hover ul a:hover {
-    color: #fbc318; 
+    background: #fbc318;
+    color: #fff;
 }
 /*Hide dropdown links until they are needed*/
 li ul {
@@ -138,7 +136,7 @@ ul li a:hover + .hidden, .hidden:hover {
 .show-menu {
     text-decoration: none;
     color: #fff;
-    background: #000;
+    background: rgba(67, 1, 189, 0.35);
     text-align: center;
     padding: 10px 0;
     display: none;
@@ -151,8 +149,8 @@ input[type=checkbox]{
 input[type=checkbox]:checked ~ #menu{
     display: block;
 }
-/*Responsive Style Menu*/
-@media screen and (max-width : 992px){
+/*Responsive Styles*/
+@media screen and (max-width : 767px){
     /*Make dropdown links appear inline*/
     ul {
         position: static;
@@ -172,6 +170,7 @@ input[type=checkbox]:checked ~ #menu{
     }
 }
 
+  
 .banner {
   grid-area: banner;
   
@@ -191,90 +190,160 @@ input[type=checkbox]:checked ~ #menu{
   grid-area: footer1;
  
 }
+
+.footer1 ul {
+    padding-bottom: 15px;
+}
+.footer1 ul li {
+    display: inline;
+}
+.footer1 ul li a {
+    padding: 12px 0;
+    font-size: smaller;
+    line-height: 7px;
+    color: #fafafa;
+    background: rgba(67, 1, 189, 0.35);
+   }
+.footer1 li a {
+    display: inline;
+   }
+.footer1 li a:hover {
+    color: #fbc318;
+}
+
+  
+
+ 
+/*SIGN UP*/
 .footer2 {
     grid-area: footer2;
 }
 
-.footer3 {
-    grid-area: footer3;
-    }
-
-ul.quicklinks {
-    list-style-type: disc;
+.sign-up{
+  background: url(bg.png) no-repeat center;
+  background-size: cover;
+  padding: 40px 0;
 }
 
-ul.quicklinks li a {
-    margin: 0;
-    padding: 0;
-    letter-spacing: 0px;
-
-}
-/*Social Links*/
-ul.social-links {
-    margin:0;
-    padding: 50px;
-    position: relative;
+.contact-form{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
 }
 
-ul.social-links li {
-    list-style: none;
+.contact-form-text{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: #fff;
+  padding: 20px 40px;
+  outline: none;
+  color: #ddd;
+  transition: 0.5s;
+}
+.contact-form-text:focus{
+  box-shadow: 0 0 10px 4px #fbc318;
+}
+textarea.contact-form-text{
+  resize: none;
+  height: 120px;
+}
+.contact-form-btn{
+  float: right;
+  border: 0;
+  background: rgba(67, 1, 189, 0.35);
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.contact-form-btn:hover{
+  background: rgba(251, 195, 24, 0.35);
 }
 
-ul.social-links li a i {
-  padding: 15px;
-  font-size: 15px;
-  width: 15px;
+.button {
+  background-color: rgba(67, 1, 189, 0.35);
+  border: none;
+  width: 100%;
+  color: white;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-  background: #4b01ca;  
-  }
-
-
-  li.social {
-    padding: 0;
-    display: inline-block;
-
-} 
-  /*Newsletter SignUp*/
- .form-inline {  
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
-
-.form-inline label {
-  margin: 5px 10px 5px 10px;
-}
-
-.form-inline input {
-  vertical-align: middle;
-  margin: 5px 10px 5px 0;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-}
-
-.form-inline button {
-  padding: 10px 20px;
-  background-color: #4b01ca;
-  border: 1px solid #ddd;
-  color: white;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 
-.form-inline button:hover {
-  background-color: #fbc318;
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(251,195,24,0.35),0 17px 50px 0 rgba(251,195,24,0.35);
 }
 
-@media (max-width: 800px) {
-  .form-inline input {
-    margin: 10px 0;
-  }
+
+
+
+
+.footer3 {
+    grid-area: footer3;
+    padding-bottom: 15px;
+    }
+.footer3 ul {
+  padding-bottom: 15px;  
   
-  .form-inline {
-    flex-direction: column;
-    align-items: stretch;
-  }
+}
+
+.footer3 ul li {
+     display: inline;
+     margin-right: 20px;
+        
+}
+
+.footer3 ul li a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 26px;
+    text-align: center;
+    color: #fafafa;
+    background: rgba(67, 1, 189, 0.35);
+   }
+
+ .footer3 li a {
+    display: inline-block;
+    min-width: 0;
+ }
+.footer3 li a:hover {
+    color: #fbc318;
+}
+@media screen and (max-width : 767px) {
+    .footer ul {
+        position: static;
+        display: inline-block;
+    }
+}
+
+.footer1 h5 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 15px;
+}
+.footer2 h5 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+}
+.footer3 h5 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
 }
